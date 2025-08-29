@@ -15,3 +15,10 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Contoso_aquent_theano_mar25(116dc797-1663-4e33-92f6-195da3734e6e)'
+    appType: 'webAppLinux'
+    appName: 'app-web-pjctbllmx7cve'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    runtimeStack: 'DOTNETCORE|8.0'
