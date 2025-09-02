@@ -1,0 +1,17 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: DotNetCoreCLI@2
+  inputs:
+    azureSubscription: 'Contoso_aquent_theano_mar25(3)(116dc797-1663-4e33-92f6-195da3734e6e)'
+    command: 'publish'
+    publishWebProjects: true
