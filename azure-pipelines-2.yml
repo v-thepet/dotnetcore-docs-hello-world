@@ -15,3 +15,11 @@ variables:
 steps:
 - script: dotnet publish --configuration $(buildConfiguration)
   displayName: 'dotnet publish $(buildConfiguration)'
+
+- task: AzureWebApp@1
+  inputs:
+      azureSubscription: 'Contoso_aquent_theano_mar25(3)(116dc797-1663-4e33-92f6-195da3734e6e)'
+      appType: 'webApp'
+      appName: 'windowswepapp'
+      package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+      deploymentMethod: 'auto'
