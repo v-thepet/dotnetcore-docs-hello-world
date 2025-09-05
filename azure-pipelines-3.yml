@@ -9,7 +9,7 @@ jobs:
   displayName: Deploy to VM
   environment: 
    name: env2025-linux
-   resourceName: env2025-linux
+   resourceName: oldubuntu
    resourceType: virtualMachine
   strategy:
      runOnce:
