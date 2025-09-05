@@ -7,10 +7,7 @@ pool:
 jobs:
 - deployment: VMDeploy
   displayName: Deploy to VM
-  environment: 
-   name: env2025-linux
-   resourceName: oldubuntu
-   resourceType: virtualMachine
+  environment: env2025-linux
   strategy:
      runOnce:
         deploy:   
